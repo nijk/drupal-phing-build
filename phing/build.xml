@@ -149,7 +149,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <phingcall target="coder-review-d${drupal.version}">
       <!-- Run the target as if it was executed from the Drupal root
            directory. -->
-      <property name="project.basedir" value="${project.drupal.dir}"/>
+      <property name="project.basedir" value="${project.drupal.dir}" override="true"/>
       <!-- We already have a clean environment so avoid further cleaning. -->
       <property name="project.cleaned" value="1"/>
       <!-- Make will run again as a part of the `init` target. We already have
@@ -846,16 +846,16 @@ Execution of this target can be skipped by setting the
       <param value="${phing.file}"/>
     </php>
 
-    <property name="basedir" value="${phing.dir}/.."/>
+    <property name="base.dir" value="${phing.dir}/.."/>
 
     <!-- If there is a project.basedir value then treat it as a relative path from the basedir, otherwise use the root directory -->
     <if>
       <isset property="project.dir"/>
       <then>
-        <property name="project.basedir" value="${basedir}/${project.dir}" override="true"/>
+        <property name="project.basedir" value="${base.dir}/${project.dir}" override="true"/>
       </then>
       <else>
-        <property name="project.basedir" value="${basedir}"/>
+        <property name="project.basedir" value="${base.dir}" override="true"/>
       </else>
     </if>
 
@@ -1120,6 +1120,10 @@ Execution of this target can be skipped by setting the
       <patternset refid="php"/>
     </fileset>
 
+    <echo>sites dir: ${project.sitesdir}</echo>
+    <echo>Drupal dir: ${project.drupal.dir}</echo>
+    <echo>Base dir: ${project.basedir}</echo>
+
     <!-- Custom PHP files -->
     <fileset id="src.php.custom" dir="${project.sitesdir}">
       <patternset refid="php"/>
@@ -1139,7 +1143,7 @@ Execution of this target can be skipped by setting the
     </fileset>
 
     <!-- All CSS files -->
-    <fileset id="src.css" dir="${project.basedir}">
+    <fileset id="src.css" dir="${project.drupal.dir}">
       <patternset refid="css"/>
     </fileset>
 
