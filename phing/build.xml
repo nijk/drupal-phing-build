@@ -841,11 +841,7 @@ Execution of this target can be skipped by setting the
       <param value="${phing.file}"/>
     </php>
 
-    <property name="basedir" value="${phing.dir}/../"/>
-
-
-    <echo level="debug" message="project.basedir: ${project.basedir}">TEST</echo>
-
+    <property name="basedir" value="${phing.dir}/.."/>
 
     <!-- If there is a project.basedir value then treat it as a relative path from the basedir, otherwise use the root directory -->
     <if>
@@ -932,7 +928,7 @@ Execution of this target can be skipped by setting the
       <else>
         <if>
           <not>
-            <isset property="project.drupal.dir"/>
+            <isset property="project.drupal.basedir"/>
           </not>
           <then>
             <property name="project.drupal.dir"
@@ -945,6 +941,8 @@ Execution of this target can be skipped by setting the
         </if>
       </else>
     </if>
+
+    <echo>${project.drupal.dir}</echo>
 
     <property name="phing.toolsdir"
               value="${phing.dir}/tools"/>
