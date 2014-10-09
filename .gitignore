@@ -1,2 +1,7 @@
 .idea
 .DS_Store
+
+# Test/Run files
+phing/tools
+project-builds/test
+phing-latest.phar
