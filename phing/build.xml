@@ -121,14 +121,19 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
   <!-- ### Verify code consistency
 
   Make sure that our code is clean and functional. -->
-  <target name="verify" depends="init,
+  <!--<target name="verify" depends="init,
                                  clean,
                                  lint-php-custom,
                                  lint-js-custom,
                                  lint-css-custom,
                                  check-php-debug,
                                  check-js-debug,
-                                 simpletest"/>
+                                 simpletest"/>-->
+  <target name="verify" depends="init,
+                                 clean,
+                                 lint-php-custom,
+                                 check-php-debug,
+                                 check-js-debug"/>
 
   <!-- ### Analyze code
 
