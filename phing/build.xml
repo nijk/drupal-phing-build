@@ -940,7 +940,7 @@ Execution of this target can be skipped by setting the
           </then>
           <else>
             <property name="project.drupal.dir"
-                      value="${project.basedir}/${project.drupal.dir}"/>
+                      value="${project.basedir}/${project.drupal.basedir}"/>
           </else>
         </if>
       </else>
