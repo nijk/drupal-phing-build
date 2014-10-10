@@ -950,7 +950,7 @@ Execution of this target can be skipped by setting the
     <echo>${project.drupal.dir}</echo>
 
     <property name="phing.toolsdir"
-              value="${phing.dir}/tools"/>
+              value="${phing.dir}/_tools"/>
     <property name="project.builddir"
               value="${project.basedir}/build-info"/>
     <property name="project.coveragedir"
