@@ -1107,7 +1107,7 @@ Execution of this target can be skipped by setting the
       <exclude name="**/*.facetapi_defaults.inc"/>
       <exclude name="**/*.features.*"/>
       <exclude name="**/*.field_group.inc"/>
-      <exclude name="**/*.field_instance.inc"/>
+      <exclude name="**/*.features.field_instance.inc"/>
       <exclude name="**/*.layouts.inc"/>
       <exclude name="**/*.linkit_profiles.inc"/>
       <exclude name="**/*.pages_default.inc"/>
