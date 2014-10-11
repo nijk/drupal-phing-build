@@ -1104,10 +1104,12 @@ Execution of this target can be skipped by setting the
     <!-- We exclude generated files from We exclude these from code analysis
          as we cannot be held responsible for any problems here. -->
     <patternset id="generated">
+      <exclude name="**/*.facetapi_defaults.inc"/>
       <exclude name="**/*.features.*"/>
       <exclude name="**/*.field_group.inc"/>
       <exclude name="**/*.field_instance.inc"/>
       <exclude name="**/*.layouts.inc"/>
+      <exclude name="**/*.linkit_profiles.inc"/>
       <exclude name="**/*.pages_default.inc"/>
       <exclude name="**/*.panels_default.inc"/>
       <exclude name="**/*.strongarm.inc"/>
