@@ -952,7 +952,7 @@ Execution of this target can be skipped by setting the
     <property name="phing.toolsdir"
               value="${phing.dir}/vendor"/>
     <property name="project.builddir"
-              value="${project.basedir}/build-info"/>
+              value="${base.dir}/build-info"/>
     <property name="project.coveragedir"
               value="${project.builddir}/coverage"/>
     <property name="project.logdir"
