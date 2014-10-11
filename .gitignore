@@ -2,6 +2,5 @@
 .DS_Store
 
 # Test/Run files
-phing/tools
-project-builds/test
+vendor
 phing-latest.phar
