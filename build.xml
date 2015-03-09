@@ -127,13 +127,16 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
                                  lint-js-custom,
                                  lint-css-custom,
                                  check-php-debug,
-                                 check-js-debug,
-                                 simpletest"/>
+                                 check-js-debug"/>
+
   <!--<target name="verify" depends="init,
                                  clean,
                                  lint-php-custom,
+                                 lint-js-custom,
+                                 lint-css-custom,
                                  check-php-debug,
-                                 check-js-debug"/>-->
+                                 check-js-debug,
+                                 simpletest"/>-->
 
   <!-- ### Analyze code
 
@@ -641,9 +644,9 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <!-- Execute coder review and output results in XML format-->
     <drush command="${coder.review.command}" assume="yes"
            pipe="yes" returnProperty="xml">
-      <param>no-empty</param>
-      <param>checkstyle</param>
-      <param>minor</param>
+      <param>--no-empty</param>
+      <param>--checkstyle</param>
+      <param>normal</param>
       <param>${coder.review.type}</param>
       <!-- Review all the modules and themes matching the project prefix -->
       <param>${project.code.projects}</param>
