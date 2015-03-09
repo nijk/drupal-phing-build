@@ -594,7 +594,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
 
     <!-- Perform actual coder review for each style -->
     <foreach target="coder-review" param="coder.review.type"
-             list="comment,i18n,security,sql,style"/>
+             list="--comment,i18n,security,sql,style"/>
   </target>
 
   <!-- #### Perform coder review
