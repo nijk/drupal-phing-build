@@ -585,6 +585,8 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <!-- Perform actual coder review for each style -->
     <foreach target="coder-review" param="coder.review.type"
              list="--comment,--i18n,--security,--sql,--style"/>
+
+
   </target>
 
   <!-- #### Perform coder review
@@ -594,8 +596,9 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
 
   No need to run `init` here. This target should only be called from parent
   `coder-review-*` targets. -->
-  <target name="coder-review"
-          depends="setup-phing-drush">
+  <target name="coder-review" depends="setup-phing-drush">
+    
+    <echo>Coder review type: ${coder.review.type}</echo>
     <!-- Get a list of modules and themes matching the project prefix.
          These are the ones we are going to review. -->
     <drush command="pm-list" pipe="true" returnProperty="projects"/>
@@ -632,8 +635,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
       returnProperty="project.code.custom"/>
 
     <!-- Execute coder review and output results in XML format-->
-    <drush command="${coder.review.command}" assume="yes"
-           pipe="yes" returnProperty="xml">
+    <drush command="${coder.review.command}" assume="yes" pipe="yes" returnProperty="xml">
       <param>--no-empty</param>
       <param>--ignores-pass</param>
       <param>--major</param>
@@ -649,6 +651,9 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <property name="coderreview.checkstyle.file"
               value="${project.logdir}/checkstyle-${coder.review.type}.xml"/>
     <delete file="${coderreview.checkstyle.file}"/>
+
+
+
     <append destFile="${coderreview.checkstyle.file}" text="${xml}"/>
 
     <!-- Convert source from source extract to Category.Type format -->
