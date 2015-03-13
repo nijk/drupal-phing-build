@@ -584,7 +584,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
 
     <!-- Perform actual coder review for each style -->
     <foreach target="coder-review" param="coder.review.type"
-             list="--comment,--i18n,--security,--sql,--style"/>
+             list="comment,i18n,security,sql,style"/>
 
 
   </target>
@@ -597,8 +597,6 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
   No need to run `init` here. This target should only be called from parent
   `coder-review-*` targets. -->
   <target name="coder-review" depends="setup-phing-drush">
-    
-    <echo>Coder review type: ${coder.review.type}</echo>
     <!-- Get a list of modules and themes matching the project prefix.
          These are the ones we are going to review. -->
     <drush command="pm-list" pipe="true" returnProperty="projects"/>
@@ -646,6 +644,8 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
       <!-- Review additional modules which do not match the prefix -->
       <param>${project.code.custom}</param>
     </drush>
+
+    <echo>Coder review type: ${coder.review.type}</echo>
 
     <!-- Write XML output to file -->
     <property name="coderreview.checkstyle.file"
