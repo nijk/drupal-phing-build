@@ -638,6 +638,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
       <param>--ignores-pass</param>
       <param>--major</param>
       <param>--checkstyle</param>
+      <param>--xml</param>
       <!-- Review all the modules and themes matching the project prefix -->
       <param>${project.code.projects}</param>
       <!-- Review additional modules which do not match the prefix -->
