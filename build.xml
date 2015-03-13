@@ -1088,11 +1088,13 @@ Execution of this target can be skipped by setting the
            In their optimized state they can not be expexted
            to conform to coding standards. -->
       <exclude name="**/*.min.js"/>
+      <exclude name="${jslint.pattern.exclude}"/>
     </patternset>
 
     <!-- CSS files -->
     <patternset id="css">
       <include name="**/*.css"/>
+      <exclude name="${csslint.pattern.exclude}"/>
     </patternset>
 
     <!-- Directories for community contributed code. We exclude these from
