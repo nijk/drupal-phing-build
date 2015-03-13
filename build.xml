@@ -578,7 +578,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <!-- Download and enable the Coder Review module -->
     <phingcall target="enable-module">
       <property name="project" value="coder"/>
-      <property name="project.version" value="7.x-1.0"/>
+      <property name="project.version" value="7.x-2.4"/>
       <property name="module" value="coder_review"/>
     </phingcall>
 
