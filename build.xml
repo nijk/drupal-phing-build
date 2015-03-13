@@ -635,8 +635,9 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
     <drush command="${coder.review.command}" assume="yes"
            pipe="yes" returnProperty="xml">
       <param>--no-empty</param>
+      <param>--ignores-pass</param>
+      <param>--major</param>
       <param>--checkstyle</param>
-      <param>${coder.review.type}</param>
       <!-- Review all the modules and themes matching the project prefix -->
       <param>${project.code.projects}</param>
       <!-- Review additional modules which do not match the prefix -->

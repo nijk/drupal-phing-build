@@ -1,5 +1,5 @@
-.idea
-.DS_Store
+.*
+!/.gitignore
 
 # Test/Run files
 vendor
