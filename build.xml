@@ -121,13 +121,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
   <!-- ### Verify code consistency
 
   Make sure that our code is clean and functional. -->
-  <target name="verify" depends="init,
-                                 clean,
-                                 lint-php-custom,
-                                 lint-js-custom,
-                                 lint-css-custom,
-                                 check-php-debug,
-                                 check-js-debug"/>
+  <target name="verify" depends="init,clean"/>
 
   <!--<target name="verify" depends="init,
                                  clean,
@@ -143,11 +137,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
   Perform static analysis of the code to generate statistics, identify potential
   problems and opportunities for refactorings and make sure that the code
   complies with coding standards. -->
-  <target name="analyze" depends="init,
-                                  clean,
-                                  phploc,
-                                  phpmd,
-                                  phpcpd">
+  <target name="analyze" depends="init,clean"><!--<target name="analyze" depends="init,clean,phploc,phpmd,phpcpd">-->
     <!-- Moved inside target to support properties in target name -->
     <phingcall target="coder-review-d${drupal.version}">
       <!-- Run the target as if it was executed from the Drupal root
