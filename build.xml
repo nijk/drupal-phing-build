@@ -121,7 +121,13 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
   <!-- ### Verify code consistency
 
   Make sure that our code is clean and functional. -->
-  <target name="verify" depends="init,clean"/>
+  <target name="verify" depends="init,
+                                 clean,
+                                 lint-php-custom,
+                                 lint-js-custom,
+                                 lint-css-custom,
+                                 check-php-debug,
+                                 check-js-debug"/>
 
   <!--<target name="verify" depends="init,
                                  clean,
@@ -639,21 +645,17 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
       <param>--major</param>
       <param>--checkstyle</param>
       <param>--xml</param>
+      <param>--${coder.review.type}</param>
       <!-- Review all the modules and themes matching the project prefix -->
       <param>${project.code.projects}</param>
       <!-- Review additional modules which do not match the prefix -->
       <param>${project.code.custom}</param>
     </drush>
 
-    <echo>Coder review type: ${coder.review.type}</echo>
-
     <!-- Write XML output to file -->
     <property name="coderreview.checkstyle.file"
               value="${project.logdir}/checkstyle-${coder.review.type}.xml"/>
     <delete file="${coderreview.checkstyle.file}"/>
-
-
-
     <append destFile="${coderreview.checkstyle.file}" text="${xml}"/>
 
     <!-- Convert source from source extract to Category.Type format -->
