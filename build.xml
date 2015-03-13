@@ -633,7 +633,7 @@ Drush Make and Simpletest support has been sponsored by [DBC](http://www.dbc.dk/
       returnProperty="project.code.custom"/>
 
     <!-- Execute coder review and output results in XML format-->
-    <drush command="${coder.review.command}" assume="yes" pipe="yes" returnProperty="xml">
+    <drush command="${coder.review.command}" pipe="yes" returnProperty="xml">
       <param>--no-empty</param>
       <param>--ignores-pass</param>
       <param>--major</param>
